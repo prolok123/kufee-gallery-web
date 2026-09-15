@@ -139,17 +139,37 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #8C431D;
         }
+
+        /* Fixed Center Watermark Logo Background */
+        .bg-watermark-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(85vw, 680px);
+            height: min(85vw, 680px);
+            background-image: url('app-icon-raw.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: multiply;
+        }
     </style>
 </head>
 <body class="relative antialiased selection:bg-brand-secondary selection:text-white">
+
+    <div class="bg-watermark-logo" aria-hidden="true"></div>
 
     <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-bg/85 border-b border-brand-border/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo Section -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-primary p-0.5 bg-white shadow-sm group-hover:scale-105 transition-transform duration-300">
-                    <img src="app-icon-raw.png" alt="Kufee Gallery Logo" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/100x100/8C431D/FFFFFF?text=Kufee';">
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-primary p-0.5 bg-white shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="app-icon-raw.png" alt="Kufee Gallery App Icon" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/100x100/8C431D/FFFFFF?text=Kufee';">
                 </div>
                 <div>
                     <span class="font-heading font-extrabold text-2xl text-brand-primary tracking-tight block leading-none">Kufee</span>
@@ -231,17 +251,29 @@
                 <!-- Right Visual Hero Graphic -->
                 <div class="lg:col-span-5 relative flex justify-center fade-in-up">
                     
-                    <!-- Main Mockup Frame -->
-                    <div class="relative w-full max-w-[320px] sm:max-w-[360px] animate-float">
+                    <!-- Main Mockup & Logo Composition -->
+                    <div class="relative w-full max-w-[340px] sm:max-w-[380px]">
+                        
+                        <!-- Featured App Logo Display Card (Handcrafted Frame) -->
+                        <div class="absolute -top-10 -left-6 sm:-left-12 z-20 w-40 sm:w-48 bg-white p-2.5 rounded-3xl border-2 border-brand-border shadow-2xl animate-float-reverse transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                            <div class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border/50 bg-amber-50">
+                                <img src="app-icon-raw.png" alt="Kufee Gallery Official Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x300/8C431D/FFFFFF?text=Kufee+Gallery';">
+                            </div>
+                            <div class="text-center mt-2 pb-1">
+                                <span class="font-heading font-bold text-xs text-brand-primary block">Kufee Official Icon</span>
+                                <span class="text-[9px] text-brand-muted">手繪手帳風格靈魂標誌</span>
+                            </div>
+                        </div>
+
                         <!-- Phone Outer Shell -->
-                        <div class="bg-brand-text p-4 rounded-[40px] shadow-2xl border-4 border-brand-subtle">
+                        <div class="bg-brand-text p-4 rounded-[40px] shadow-2xl border-4 border-brand-subtle animate-float">
                             <!-- Phone Screen Notch & Header -->
                             <div class="bg-brand-bg rounded-[28px] overflow-hidden border border-brand-border p-3 space-y-3">
                                 
                                 <!-- App Header Mock -->
                                 <div class="flex items-center justify-between pb-2 border-b border-brand-border">
                                     <div class="flex items-center gap-2">
-                                        <div class="w-7 h-7 rounded-full overflow-hidden border border-brand-primary">
+                                        <div class="w-7 h-7 rounded-full overflow-hidden border border-brand-primary shadow-xs">
                                             <img src="app-icon-raw.png" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/8C431D/FFFFFF?text=K';">
                                         </div>
                                         <span class="font-heading font-bold text-sm text-brand-text">毛孩夏日假期</span>
@@ -646,8 +678,8 @@
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
-            <div class="w-20 h-20 mx-auto rounded-full p-1 bg-white shadow-2xl overflow-hidden">
-                <img src="app-icon-raw.png" alt="Kufee Icon" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/100x100/8C431D/FFFFFF?text=K';">
+            <div class="w-28 h-28 mx-auto rounded-3xl p-1.5 bg-white shadow-2xl overflow-hidden border-2 border-amber-200/50 transform hover:scale-105 transition-transform duration-300">
+                <img src="app-icon-raw.png" alt="Kufee Icon" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/8C431D/FFFFFF?text=Kufee';">
             </div>
 
             <h2 class="text-3xl sm:text-5xl font-heading font-extrabold leading-tight">
