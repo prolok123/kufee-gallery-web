@@ -157,6 +157,15 @@
             z-index: 0;
             mix-blend-mode: multiply;
         }
+
+        /* Floating Wave Ribbon Animation */
+        @keyframes wave-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .animate-wave-float {
+            animation: wave-float 8s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="relative antialiased selection:bg-brand-secondary selection:text-white">
@@ -179,17 +188,23 @@
 
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-brand-text">
-                <a href="#features" class="hover:text-brand-primary transition-colors">核心特色</a>
-                <a href="#virtual-collection" class="hover:text-brand-primary transition-colors">虛擬相簿概念</a>
-                <a href="#sources" class="hover:text-brand-primary transition-colors">跨平台來源</a>
-                <a href="#demo" class="hover:text-brand-primary transition-colors">互動體驗</a>
+                <a href="#features" data-i18n="nav.features" class="hover:text-brand-primary transition-colors">核心特色</a>
+                <a href="#virtual-collection" data-i18n="nav.virtual" class="hover:text-brand-primary transition-colors">虛擬相簿概念</a>
+                <a href="#sources" data-i18n="nav.sources" class="hover:text-brand-primary transition-colors">跨平台來源</a>
+                <a href="#demo" data-i18n="nav.demo" class="hover:text-brand-primary transition-colors">互動體驗</a>
             </nav>
 
-            <!-- CTA Download Button -->
+            <!-- CTA & Language Toggle Button -->
             <div class="flex items-center gap-3">
+                <!-- Language Switcher Button -->
+                <button id="lang-toggle-btn" onclick="toggleLanguage()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-brand-border bg-white text-brand-text font-semibold text-xs hover:bg-brand-subtle transition-all shadow-xs cursor-pointer">
+                    <i class="fa-solid fa-globe text-brand-primary"></i>
+                    <span id="lang-label">English</span>
+                </button>
+
                 <a href="#download" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-primary text-white font-medium text-sm hover:bg-brand-hover shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                     <i class="fa-solid fa-download mr-2 text-xs"></i>
-                    免費下載
+                    <span data-i18n="nav.download">免費下載</span>
                 </a>
             </div>
         </div>
@@ -200,6 +215,13 @@
         <div class="bg-glow-warm-1 top-10 -left-20"></div>
         <div class="bg-glow-warm-2 top-40 -right-20"></div>
 
+        <!-- Background Decorative SVG Wave Line 1 -->
+        <div class="absolute top-1/4 left-0 w-full overflow-hidden leading-none pointer-events-none opacity-30 animate-wave-float z-0">
+            <svg class="relative block w-full h-24 text-brand-secondary/30" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6,8"></path>
+            </svg>
+        </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
@@ -207,15 +229,15 @@
                 <div class="lg:col-span-7 text-center lg:text-left space-y-6 fade-in-up">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-subtle border border-brand-border text-brand-primary text-xs font-semibold tracking-wide uppercase">
                         <i class="fa-solid fa-heart text-brand-secondary"></i>
-                        iOS & Android 雙平台跨來源媒體瀏覽 App
+                        <span data-i18n="hero.badge">iOS & Android 雙平台跨來源媒體瀏覽 App</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-brand-text leading-tight">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-brand-text leading-tight" data-i18n="hero.title">
                         重組回憶，<br class="hidden sm:inline">
                         <span class="text-brand-primary underline decoration-brand-secondary/40 decoration-wavy underline-offset-8">零重複佔用</span> 每一G空間
                     </h1>
 
-                    <p class="text-base sm:text-lg text-brand-muted max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    <p class="text-base sm:text-lg text-brand-muted max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero.desc">
                         <b>Kufee Gallery</b> 獨創 Virtual Collection 虛擬相簿技術。無需移動、複製或重複匯入原檔，即可跨越 本地儲存、SD卡、iOS Photo Library 與 雲端硬碟，將珍貴相片與影片自由歸類。
                     </p>
 
@@ -223,10 +245,10 @@
                         <a href="#download" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-brand-primary text-white font-bold text-base hover:bg-brand-hover shadow-lg hover:shadow-xl transition-all text-center flex items-center justify-center gap-3">
                             <i class="fa-brands fa-apple text-xl"></i>
                             <i class="fa-brands fa-android text-xl"></i>
-                            立即下載體驗
+                            <span data-i18n="hero.cta_download">立即下載體驗</span>
                         </a>
                         <a href="#virtual-collection" class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white border border-brand-border text-brand-text font-semibold hover:bg-brand-subtle transition-all text-center flex items-center justify-center gap-2">
-                            了解「虛擬相簿」運作
+                            <span data-i18n="hero.cta_learn">了解「虛擬相簿」運作</span>
                             <i class="fa-solid fa-arrow-down text-xs text-brand-muted"></i>
                         </a>
                     </div>
@@ -234,16 +256,16 @@
                     <!-- Trust Stats / Highlights -->
                     <div class="pt-8 grid grid-cols-3 gap-4 border-t border-brand-border/60 max-w-lg mx-auto lg:mx-0">
                         <div>
-                            <div class="text-2xl sm:text-3xl font-heading font-bold text-brand-primary">0 Byte</div>
-                            <div class="text-xs text-brand-muted mt-0.5">不複製任何媒體原檔</div>
+                            <div class="text-2xl sm:text-3xl font-heading font-bold text-brand-primary" data-i18n="hero.stat1_val">0 Byte</div>
+                            <div class="text-xs text-brand-muted mt-0.5" data-i18n="hero.stat1_lbl">不複製任何媒體原檔</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-heading font-bold text-brand-green">100%</div>
-                            <div class="text-xs text-brand-muted mt-0.5">跨平台原生檔案目錄</div>
+                            <div class="text-2xl sm:text-3xl font-heading font-bold text-brand-green" data-i18n="hero.stat2_val">100%</div>
+                            <div class="text-xs text-brand-muted mt-0.5" data-i18n="hero.stat2_lbl">跨平台原生檔案目錄</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-heading font-bold text-brand-secondary">4+</div>
-                            <div class="text-xs text-brand-muted mt-0.5">多重儲存來源無縫整合</div>
+                            <div class="text-2xl sm:text-3xl font-heading font-bold text-brand-secondary" data-i18n="hero.stat3_val">4+</div>
+                            <div class="text-xs text-brand-muted mt-0.5" data-i18n="hero.stat3_lbl">多重儲存來源無縫整合</div>
                         </div>
                     </div>
                 </div>
@@ -251,19 +273,8 @@
                 <!-- Right Visual Hero Graphic -->
                 <div class="lg:col-span-5 relative flex justify-center fade-in-up">
                     
-                    <!-- Main Mockup & Logo Composition -->
+                    <!-- Main Mockup Composition -->
                     <div class="relative w-full max-w-[340px] sm:max-w-[380px]">
-                        
-                        <!-- Featured App Logo Display Card (Handcrafted Frame) -->
-                        <div class="absolute -top-10 -left-6 sm:-left-12 z-20 w-40 sm:w-48 bg-white p-2.5 rounded-3xl border-2 border-brand-border shadow-2xl animate-float-reverse transform -rotate-6 hover:rotate-0 transition-transform duration-300">
-                            <div class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border/50 bg-amber-50">
-                                <img src="app-icon-raw.png" alt="Kufee Gallery Official Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x300/8C431D/FFFFFF?text=Kufee+Gallery';">
-                            </div>
-                            <div class="text-center mt-2 pb-1">
-                                <span class="font-heading font-bold text-xs text-brand-primary block">Kufee Official Icon</span>
-                                <span class="text-[9px] text-brand-muted">手繪手帳風格靈魂標誌</span>
-                            </div>
-                        </div>
 
                         <!-- Phone Outer Shell -->
                         <div class="bg-brand-text p-4 rounded-[40px] shadow-2xl border-4 border-brand-subtle animate-float">
@@ -276,7 +287,7 @@
                                         <div class="w-7 h-7 rounded-full overflow-hidden border border-brand-primary shadow-xs">
                                             <img src="app-icon-raw.png" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/8C431D/FFFFFF?text=K';">
                                         </div>
-                                        <span class="font-heading font-bold text-sm text-brand-text">毛孩夏日假期</span>
+                                        <span class="font-heading font-bold text-sm text-brand-text" data-i18n="hero.mock_title">毛孩夏日假期</span>
                                     </div>
                                     <span class="text-[10px] bg-brand-secondary/20 text-brand-primary px-2 py-0.5 rounded-full font-semibold">Virtual</span>
                                 </div>
@@ -318,8 +329,19 @@
                             <i class="fa-solid fa-bolt"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-brand-text">快如閃電</div>
-                            <div class="text-[11px] text-brand-muted">萬張相片秒速載入</div>
+                            <div class="text-xs font-bold text-brand-text" data-i18n="hero.badge_fast_title">快如閃電</div>
+                            <div class="text-[11px] text-brand-muted" data-i18n="hero.badge_fast_sub">萬張相片秒速載入</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge Card 2 -->
+                    <div class="absolute -bottom-6 -right-4 sm:-right-8 bg-white border border-brand-border p-3 rounded-2xl shadow-xl animate-float flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-brand-green text-lg">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-brand-text" data-i18n="hero.badge_safe_title">原檔零動搖</div>
+                            <div class="text-[11px] text-brand-muted" data-i18n="hero.badge_safe_sub">不會修改或刪除原始檔</div>
                         </div>
                     </div>
 
@@ -340,17 +362,24 @@
         </div>
     </section>
 
-    <section id="virtual-collection" class="py-20 bg-brand-subtle/50 relative border-y border-brand-border/60">
+    <!-- Top Wave Transition Divider into Virtual Collections Section -->
+    <div class="relative w-full overflow-hidden leading-none z-10 -mb-1">
+        <svg class="relative block w-full h-12 sm:h-20 text-brand-subtle/60" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C300,90 600,10 1200,60 L1200,120 L0,120 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <section id="virtual-collection" class="py-20 bg-brand-subtle/60 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto space-y-4 fade-in-up">
-                <span class="text-xs font-bold text-brand-secondary uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-brand-border">
+                <span class="text-xs font-bold text-brand-secondary uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-brand-border" data-i18n="vc.badge">
                     革命性管理技術
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text">
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text relative inline-block" data-i18n="vc.title">
                     甚麼是 <span class="text-brand-primary">Virtual Collections 虛擬相簿</span>？
                 </h2>
-                <p class="text-brand-muted text-base">
+                <p class="text-brand-muted text-base pt-2" data-i18n="vc.desc">
                     傳統相簿 APP 在分類時，往往會把照片複製或移動到新資料夾，導致手機空間瞬間暴增。<br class="hidden sm:inline">
                     Kufee Gallery 只建立**「持久化引用索引 (Persistent Reference)」**，實現無痛分類。
                 </p>
@@ -366,30 +395,30 @@
                             <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
                                 <i class="fa-solid fa-xmark text-lg"></i>
                             </div>
-                            <h3 class="font-heading font-bold text-xl text-brand-text">傳統相簿做法</h3>
+                            <h3 class="font-heading font-bold text-xl text-brand-text" data-i18n="vc.old_title">傳統相簿做法</h3>
                         </div>
-                        <span class="text-xs font-semibold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">浪費空間</span>
+                        <span class="text-xs font-semibold text-red-500 bg-red-50 px-2.5 py-1 rounded-full" data-i18n="vc.old_badge">浪費空間</span>
                     </div>
 
                     <ul class="mt-6 space-y-4 text-sm text-brand-muted">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-minus text-red-400 mt-1"></i>
-                            <span>建立新目錄時重複複製影片與照片，佔用多一倍儲存空間。</span>
+                            <span data-i18n="vc.old_point1">建立新目錄時重複複製影片與照片，佔用多一倍儲存空間。</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-minus text-red-400 mt-1"></i>
-                            <span>無法輕易整合外部 SD 卡、USB 或雲端相片到同一個相簿內。</span>
+                            <span data-i18n="vc.old_point2">無法輕易整合外部 SD 卡、USB 或雲端相片到同一個相簿內。</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-minus text-red-400 mt-1"></i>
-                            <span>當移走 SD 卡或斷開雲端時，傳統相簿紀錄容易直接遺失破壞。</span>
+                            <span data-i18n="vc.old_point3">當移走 SD 卡或斷開雲端時，傳統相簿紀錄容易直接遺失破壞。</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Kufee Way Card -->
                 <div class="polaroid-card p-8 rounded-3xl border-2 !border-brand-primary relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider">
+                    <div class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider" data-i18n="vc.new_tag">
                         Kufee 推薦模式
                     </div>
 
@@ -400,21 +429,21 @@
                             </div>
                             <h3 class="font-heading font-bold text-xl text-brand-primary">Kufee Virtual Reference</h3>
                         </div>
-                        <span class="text-xs font-semibold text-brand-green bg-emerald-50 px-2.5 py-1 rounded-full">零額外容量</span>
+                        <span class="text-xs font-semibold text-brand-green bg-emerald-50 px-2.5 py-1 rounded-full" data-i18n="vc.new_badge">零額外容量</span>
                     </div>
 
                     <ul class="mt-6 space-y-4 text-sm text-brand-text font-medium">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
-                            <span>只儲存指向原檔的輕量 Reference，新增相片到相簿完全<b>不佔用額外 Storage</b>。</span>
+                            <span data-i18n="vc.new_point1">只儲存指向原檔的輕量 Reference，新增相片到相簿完全<b>不佔用額外 Storage</b>。</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
-                            <span><b>彈性離線恢復：</b>拔出 SD 卡時相簿保留紀錄；重新插入時相片自動恢復呈現。</span>
+                            <span data-i18n="vc.new_point2"><b>彈性離線恢復：</b>拔出 SD 卡時相簿保留紀錄；重新插入時相片自動恢復呈現。</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
-                            <span><b>自動智能預設：</b>首次啟動自動產生「所有相片」與「所有影片」動態相簿。</span>
+                            <span data-i18n="vc.new_point3"><b>自動智能預設：</b>首次啟動自動產生「所有相片」與「所有影片」動態相簿。</span>
                         </li>
                     </ul>
                 </div>
@@ -424,17 +453,24 @@
         </div>
     </section>
 
+    <!-- Bottom Wave Transition Divider into Sources Section -->
+    <div class="relative w-full overflow-hidden leading-none z-10 -mt-1 -mb-1">
+        <svg class="relative block w-full h-12 sm:h-20 text-brand-subtle/60" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C400,20 800,100 1200,10 L1200,0 L0,0 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
     <section id="sources" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto space-y-4 fade-in-up">
-                <span class="text-xs font-bold text-brand-green uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                <span class="text-xs font-bold text-brand-green uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200" data-i18n="sources.badge">
                     全方位跨平台整合
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text">
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text" data-i18n="sources.title">
                     打破平台邊界，連接你所有的媒體來源
                 </h2>
-                <p class="text-brand-muted text-base">
+                <p class="text-brand-muted text-base" data-i18n="sources.desc">
                     無論相片儲存在 Android 內部檔案系統、SD卡/USB、iOS Photo Library 還是雲端，Kufee 提供統一流暢的瀏覽與管理體驗。
                 </p>
             </div>
@@ -448,7 +484,7 @@
                         <i class="fa-brands fa-android"></i>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-text">Android Main Storage</h3>
-                    <p class="text-xs text-brand-muted leading-relaxed">
+                    <p class="text-xs text-brand-muted leading-relaxed" data-i18n="sources.s1_desc">
                         支援 Full Filesystem Access 直接瀏覽目錄，自動掃描隱藏資料夾，搭配極速背景 Indexing 機制。
                     </p>
                 </div>
@@ -459,7 +495,7 @@
                         <i class="fa-solid fa-sd-card"></i>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-text">SAF & Other Storages</h3>
-                    <p class="text-xs text-brand-muted leading-relaxed">
+                    <p class="text-xs text-brand-muted leading-relaxed" data-i18n="sources.s2_desc">
                         獨立授權的 SD 卡、USB OTG 或外接硬碟目錄。隨插即用，拔出時自動保護相簿索引不丟失。
                     </p>
                 </div>
@@ -470,7 +506,7 @@
                         <i class="fa-brands fa-apple"></i>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-text">iOS Photo Library & Files</h3>
-                    <p class="text-xs text-brand-muted leading-relaxed">
+                    <p class="text-xs text-brand-muted leading-relaxed" data-i18n="sources.s3_desc">
                         內建自訂相簿瀏覽器，無縫整合系統相簿、Recents、iOS Files Document Picker 與外接裝置。
                     </p>
                 </div>
@@ -481,7 +517,7 @@
                         <i class="fa-solid fa-cloud"></i>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-text">Cloud Storage</h3>
-                    <p class="text-xs text-brand-muted leading-relaxed">
+                    <p class="text-xs text-brand-muted leading-relaxed" data-i18n="sources.s4_desc">
                         支援 Dropbox、Google Drive 多帳號安全連接。將雲端照片與本地照片同存於同一個虛擬相簿中。
                     </p>
                 </div>
@@ -491,201 +527,23 @@
         </div>
     </section>
 
-    <section id="features" class="py-20 bg-brand-subtle/40 border-t border-brand-border/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-5 space-y-6 fade-in-up">
-                    <span class="text-xs font-bold text-brand-primary uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-brand-border">
-                        為質感而生
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text">
-                        精心打磨的細節，<br>擺脫工程師味硬邦邦 UI
-                    </h2>
-                    <p class="text-brand-muted text-base leading-relaxed">
-                        我們相信相簿不只是數據網格，更是存放溫暖回憶的手帳。Kufee Gallery 採用 Material 3 現代美學，結合流暢的全螢幕幻燈片循環播放。
-                    </p>
-
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-primary shrink-0 shadow-sm">
-                                <i class="fa-solid fa-palette"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold text-brand-text">Material 3 & 深淺主題</h4>
-                                <p class="text-xs text-brand-muted mt-0.5">自動隨系統切換 Light/Dark Mode，搭配流暢的圓角與微陰影細節。</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-green shrink-0 shadow-sm">
-                                <i class="fa-solid fa-sliders"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold text-brand-text">自訂 Grid 縮放密度</h4>
-                                <p class="text-xs text-brand-muted mt-0.5">自由設定照片牆密度，相片縮圖採用快取預載，不卡頓不重複閃爍。</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-white border border-brand-border flex items-center justify-center text-brand-secondary shrink-0 shadow-sm">
-                                <i class="fa-solid fa-lock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold text-brand-text">本地端安全保護</h4>
-                                <p class="text-xs text-brand-muted mt-0.5">支援原生生物識別（Face ID / 指紋鎖），資料不私自上傳第三者伺服器。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Scrapbook Visual Showcase Grid -->
-                <div class="lg:col-span-7 grid grid-cols-2 gap-4 fade-in-up">
-                    <div class="space-y-4">
-                        <div class="polaroid-card p-4 rounded-2xl space-y-2 transform -rotate-1">
-                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="w-full h-48 object-cover rounded-xl" alt="Beach photo">
-                            <div class="text-xs font-bold text-brand-text">夏日海灘.jpg</div>
-                            <div class="text-[10px] text-brand-muted flex justify-between">
-                                <span>來自 SD Card</span>
-                                <span>1080p</span>
-                            </div>
-                        </div>
-                        <div class="polaroid-card p-4 rounded-2xl space-y-2 transform rotate-2">
-                            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" class="w-full h-36 object-cover rounded-xl" alt="Mountain photo">
-                            <div class="text-xs font-bold text-brand-text">高山露營遠足.mp4</div>
-                            <div class="text-[10px] text-brand-muted flex justify-between">
-                                <span>來自 Dropbox</span>
-                                <span>0 Byte 副本</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4 pt-8">
-                        <div class="polaroid-card p-4 rounded-2xl space-y-2 transform rotate-1">
-                            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80" class="w-full h-36 object-cover rounded-xl" alt="Cat photo">
-                            <div class="text-xs font-bold text-brand-text">貓咪午後散步.jpg</div>
-                            <div class="text-[10px] text-brand-muted flex justify-between">
-                                <span>來自 iOS Photo Library</span>
-                                <span>4K</span>
-                            </div>
-                        </div>
-                        <div class="polaroid-card p-4 rounded-2xl space-y-2 transform -rotate-2">
-                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" class="w-full h-48 object-cover rounded-xl" alt="Party photo">
-                            <div class="text-xs font-bold text-brand-text">生日慶祝合照.jpg</div>
-                            <div class="text-[10px] text-brand-muted flex justify-between">
-                                <span>來自 Android Storage</span>
-                                <span>已加入虛擬相簿</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section id="demo" class="py-20 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-            <div class="space-y-3">
-                <span class="text-xs font-bold text-brand-primary uppercase tracking-widest bg-brand-subtle px-3 py-1 rounded-full border border-brand-border">
-                    互動示範 Demo
-                </span>
-                <h2 class="text-3xl font-heading font-bold text-brand-text">親體驗「虛擬相簿」新增過程</h2>
-                <p class="text-xs sm:text-sm text-brand-muted">點擊以下來自不同來源的照片，將它們加入 Virtual Collection，觀察總空間變化：</p>
-            </div>
-
-            <!-- Demo Container Box -->
-            <div class="polaroid-card p-6 sm:p-8 rounded-3xl text-left bg-white border border-brand-border shadow-xl">
-                
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-brand-border gap-4">
-                    <div>
-                        <h3 class="font-heading font-bold text-lg text-brand-text">自訂相簿：<span class="text-brand-primary">「毛孩日常回憶錄」</span></h3>
-                        <p class="text-xs text-brand-muted mt-0.5">目前已選取的參考相片數：<span id="selected-count" class="font-bold text-brand-primary">0</span> 張</p>
-                    </div>
-
-                    <div class="bg-brand-subtle px-4 py-2 rounded-2xl border border-brand-border text-xs">
-                        <span class="text-brand-muted block">新增虛擬相簿所需額外容量：</span>
-                        <span id="storage-used" class="font-bold text-brand-green text-sm">0 KB (0% Extra)</span>
-                    </div>
-                </div>
-
-                <!-- Selectable Demo Media Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
-                    
-                    <!-- Item 1 -->
-                    <div onclick="toggleSelect(this)" class="demo-item cursor-pointer border-2 border-transparent p-1 rounded-2xl hover:border-brand-secondary transition-all relative group">
-                        <div class="aspect-square rounded-xl overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
-                            <div class="badge absolute top-2 right-2 w-6 h-6 rounded-full bg-white/80 text-brand-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="text-[11px] font-semibold text-brand-text mt-1.5 truncate">SDCard/DCIM/Dog.jpg</div>
-                        <div class="text-[10px] text-brand-muted">原檔大小: 4.2 MB</div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div onclick="toggleSelect(this)" class="demo-item cursor-pointer border-2 border-transparent p-1 rounded-2xl hover:border-brand-secondary transition-all relative group">
-                        <div class="aspect-square rounded-xl overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
-                            <div class="badge absolute top-2 right-2 w-6 h-6 rounded-full bg-white/80 text-brand-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="text-[11px] font-semibold text-brand-text mt-1.5 truncate">iOS/Photos/Sunny.png</div>
-                        <div class="text-[10px] text-brand-muted">原檔大小: 8.7 MB</div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div onclick="toggleSelect(this)" class="demo-item cursor-pointer border-2 border-transparent p-1 rounded-2xl hover:border-brand-secondary transition-all relative group">
-                        <div class="aspect-square rounded-xl overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
-                            <div class="badge absolute top-2 right-2 w-6 h-6 rounded-full bg-white/80 text-brand-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="text-[11px] font-semibold text-brand-text mt-1.5 truncate">GDrive/Pets/Park.mp4</div>
-                        <div class="text-[10px] text-brand-muted">原檔大小: 45.0 MB</div>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div onclick="toggleSelect(this)" class="demo-item cursor-pointer border-2 border-transparent p-1 rounded-2xl hover:border-brand-secondary transition-all relative group">
-                        <div class="aspect-square rounded-xl overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=300&q=80" class="w-full h-40 object-cover">
-                            <div class="badge absolute top-2 right-2 w-6 h-6 rounded-full bg-white/80 text-brand-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="text-[11px] font-semibold text-brand-text mt-1.5 truncate">Internal/Download/Sleep.jpg</div>
-                        <div class="text-[10px] text-brand-muted">原檔大小: 2.1 MB</div>
-                    </div>
-
-                </div>
-
-                <div class="p-3 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-brand-primary flex items-center gap-2">
-                    <i class="fa-solid fa-lightbulb text-brand-secondary text-sm"></i>
-                    <span>提示：無論你加入多少張照片，Kufee 只會儲存數十 Byte 的安全 reference 捷徑，原始檔案毫無影響！</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
+    <!-- Wave Divider before Download CTA -->
+    <div class="relative w-full overflow-hidden leading-none z-10 -mb-1">
+        <svg class="relative block w-full h-14 sm:h-24 text-brand-primary" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,60 C300,120 700,0 1200,70 L1200,120 L0,120 Z" fill="currentColor"></path>
+        </svg>
+    </div>
 
     <section id="download" class="py-20 relative bg-brand-primary text-white overflow-hidden">
-        <!-- Background Pattern Decor -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
             <div class="w-28 h-28 mx-auto rounded-3xl p-1.5 bg-white shadow-2xl overflow-hidden border-2 border-amber-200/50 transform hover:scale-105 transition-transform duration-300">
                 <img src="app-icon-raw.png" alt="Kufee Icon" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/8C431D/FFFFFF?text=Kufee';">
             </div>
 
-            <h2 class="text-3xl sm:text-5xl font-heading font-extrabold leading-tight">
+            <h2 class="text-3xl sm:text-5xl font-heading font-extrabold leading-tight" data-i18n="cta.title">
                 準備好用全新方式整理你的相片庫了嗎？
             </h2>
-            <p class="text-amber-100 max-w-2xl mx-auto text-base sm:text-lg">
+            <p class="text-amber-100 max-w-2xl mx-auto text-base sm:text-lg" data-i18n="cta.desc">
                 免費下載 Kufee Gallery，享受跨平台、零負擔、充滿質感的回憶整理之旅。
             </p>
 
@@ -707,7 +565,7 @@
                 </a>
             </div>
 
-            <p class="text-xs text-amber-200/70 pt-4">
+            <p class="text-xs text-amber-200/70 pt-4" data-i18n="cta.footer_note">
                 支援 Android 8.0+ 及 iOS 14.0+ 裝置 | Material 3 美學設計
             </p>
         </div>
@@ -725,42 +583,149 @@
             </div>
 
             <div class="flex gap-6 text-brand-muted">
-                <a href="#" class="hover:text-white transition-colors">隱私權條款 (Privacy)</a>
-                <a href="#" class="hover:text-white transition-colors">使用條款 (Terms)</a>
-                <a href="#" class="hover:text-white transition-colors">幫助中心 (Help)</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="footer.privacy">隱私權條款</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="footer.terms">使用條款</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="footer.help">幫助中心</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Interactive Demo Script
-        let selectedCount = 0;
-        
-        function toggleSelect(element) {
-            const isSelected = element.classList.contains('border-brand-primary');
-            const badge = element.querySelector('.badge');
-
-            if (isSelected) {
-                element.classList.remove('border-brand-primary', 'bg-amber-50/60');
-                element.classList.add('border-transparent');
-                badge.innerHTML = '<i class="fa-solid fa-plus"></i>';
-                badge.classList.remove('bg-brand-primary', 'text-white', 'opacity-100');
-                badge.classList.add('bg-white/80', 'text-brand-primary');
-                selectedCount--;
-            } else {
-                element.classList.remove('border-transparent');
-                element.classList.add('border-brand-primary', 'bg-amber-50/60');
-                badge.innerHTML = '<i class="fa-solid fa-check"></i>';
-                badge.classList.remove('bg-white/80', 'text-brand-primary');
-                badge.classList.add('bg-brand-primary', 'text-white', 'opacity-100');
-                selectedCount++;
+        const translations = {
+            zh: {
+                "nav.features": "核心特色",
+                "nav.virtual": "虛擬相簿概念",
+                "nav.sources": "跨平台來源",
+                "nav.demo": "互動體驗",
+                "nav.download": "免費下載",
+                "hero.badge": "iOS & Android 雙平台跨來源媒體瀏覽 App",
+                "hero.title": "重組回憶，<br class=\"hidden sm:inline\"> <span class=\"text-brand-primary underline decoration-brand-secondary/40 decoration-wavy underline-offset-8\">零重複佔用</span> 每一G空間",
+                "hero.desc": "<b>Kufee Gallery</b> 獨創 Virtual Collection 虛擬相簿技術。無需移動、複製或重複匯入原檔，即可跨越 本地儲存、SD卡、iOS Photo Library 與 雲端硬碟，將珍貴相片與影片自由歸類。",
+                "hero.cta_download": "立即下載體驗",
+                "hero.cta_learn": "了解「虛擬相簿」運作",
+                "hero.stat1_val": "0 Byte",
+                "hero.stat1_lbl": "不複製任何媒體原檔",
+                "hero.stat2_val": "100%",
+                "hero.stat2_lbl": "跨平台原生檔案目錄",
+                "hero.stat3_val": "4+",
+                "hero.stat3_lbl": "多重儲存來源無縫整合",
+                "hero.mock_title": "毛孩夏日假期",
+                "hero.badge_fast_title": "快如閃電",
+                "hero.badge_fast_sub": "萬張相片秒速載入",
+                "hero.badge_safe_title": "原檔零動搖",
+                "hero.badge_safe_sub": "不會修改或刪除原始檔",
+                "vc.badge": "革命性管理技術",
+                "vc.title": "甚麼是 <span class=\"text-brand-primary\">Virtual Collections 虛擬相簿</span>？",
+                "vc.desc": "傳統相簿 APP 在分類時，往往會把照片複製或移動到新資料夾，導致手機空間瞬間暴增。<br class=\"hidden sm:inline\">Kufee Gallery 只建立<b>「持久化引用索引 (Persistent Reference)」</b>，實現無痛分類。",
+                "vc.old_title": "傳統相簿做法",
+                "vc.old_badge": "浪費空間",
+                "vc.old_point1": "建立新目錄時重複複製影片與照片，佔用多一倍儲存空間。",
+                "vc.old_point2": "無法輕易整合外部 SD 卡、USB 或雲端相片到同一個相簿內。",
+                "vc.old_point3": "當移走 SD 卡或斷開雲端時，傳統相簿紀錄容易直接遺失破壞。",
+                "vc.new_tag": "Kufee 推薦模式",
+                "vc.new_badge": "零額外容量",
+                "vc.new_point1": "只儲存指向原檔的輕量 Reference，新增相片到相簿完全<b>不佔用額外 Storage</b>。",
+                "vc.new_point2": "<b>彈性離線恢復：</b>拔出 SD 卡時相簿保留紀錄；重新插入時相片自動恢復呈現。",
+                "vc.new_point3": "<b>自動智能預設：</b>首次啟動自動產生「所有相片」與「所有影片」動態相簿。",
+                "sources.badge": "全方位跨平台整合",
+                "sources.title": "打破平台邊界，連接你所有的媒體來源",
+                "sources.desc": "無論相片儲存在 Android 內部檔案系統、SD卡/USB、iOS Photo Library 還是雲端，Kufee 提供統一流暢的瀏覽與管理體驗。",
+                "sources.s1_desc": "支援 Full Filesystem Access 直接瀏覽目錄，自動掃描隱藏資料夾，搭配極速背景 Indexing 機制。",
+                "sources.s2_desc": "獨立授權的 SD 卡、USB OTG 或外接硬碟目錄。隨插即用，拔出時自動保護相簿索引不丟失。",
+                "sources.s3_desc": "內建自訂相簿瀏覽器，無縫整合系統相簿、Recents、iOS Files Document Picker 與外接裝置。",
+                "sources.s4_desc": "支援 Dropbox、Google Drive 多帳號安全連接。將雲端照片與本地照片同存於同一個虛擬相簿中。",
+                "cta.title": "準備好用全新方式整理你的相片庫了嗎？",
+                "cta.desc": "免費下載 Kufee Gallery，享受跨平台、零負擔、充滿質感的回憶整理之旅。",
+                "cta.footer_note": "支援 Android 8.0+ 及 iOS 14.0+ 裝置 | Material 3 美學設計",
+                "footer.privacy": "隱私權條款 (Privacy)",
+                "footer.terms": "使用條款 (Terms)",
+                "footer.help": "幫助中心 (Help)"
+            },
+            en: {
+                "nav.features": "Features",
+                "nav.virtual": "Virtual Collections",
+                "nav.sources": "Media Sources",
+                "nav.demo": "Interactive Demo",
+                "nav.download": "Free Download",
+                "hero.badge": "Cross-Platform Media Gallery App for iOS & Android",
+                "hero.title": "Reorganize Memories,<br class=\"hidden sm:inline\"> <span class=\"text-brand-primary underline decoration-brand-secondary/40 decoration-wavy underline-offset-8\">Zero Duplication</span> of Storage Space",
+                "hero.desc": "<b>Kufee Gallery</b> features Virtual Collection technology. Organize your photos and videos across Local Storage, SD Cards, iOS Photo Library, and Cloud Drives without moving, copying, or duplicating original files.",
+                "hero.cta_download": "Download Now",
+                "hero.cta_learn": "How Virtual Collections Work",
+                "hero.stat1_val": "0 Bytes",
+                "hero.stat1_lbl": "Zero File Duplication",
+                "hero.stat2_val": "100%",
+                "hero.stat2_lbl": "Native Directory Tree",
+                "hero.stat3_val": "4+",
+                "hero.stat3_lbl": "Seamless Storage Integration",
+                "hero.mock_title": "Paws Summer Holiday",
+                "hero.badge_fast_title": "Lightning Fast",
+                "hero.badge_fast_sub": "Loads 10,000+ photos in seconds",
+                "hero.badge_safe_title": "Originals Untouched",
+                "hero.badge_safe_sub": "Never alters or deletes raw files",
+                "vc.badge": "Next-Gen Media Management",
+                "vc.title": "What are <span class=\"text-brand-primary\">Virtual Collections</span>?",
+                "vc.desc": "Traditional gallery apps copy or move files when organizing, consuming massive storage space.<br class=\"hidden sm:inline\">Kufee Gallery creates light <b>Persistent References</b> for effortless organization.",
+                "vc.old_title": "Traditional Galleries",
+                "vc.old_badge": "Wastes Space",
+                "vc.old_point1": "Duplicates photos/videos when adding to albums, wasting storage space.",
+                "vc.old_point2": "Cannot seamlessly unify SD cards, USBs, and Cloud photos in one album.",
+                "vc.old_point3": "Album links break easily when SD cards or Cloud connections disconnect.",
+                "vc.new_tag": "The Kufee Way",
+                "vc.new_badge": "Zero Extra Storage",
+                "vc.new_point1": "Stores lightweight references only. Adding photos uses <b>0 extra storage</b>.",
+                "vc.new_point2": "<b>Graceful Offline Recovery:</b> References stay safe when SD cards are removed.",
+                "vc.new_point3": "<b>Auto Smart Starters:</b> Auto-creates 'All Photos' and 'All Videos' on first launch.",
+                "sources.badge": "Full Cross-Platform Support",
+                "sources.title": "Break Platform Boundaries, Connect All Media",
+                "sources.desc": "Whether stored on Android Filesystem, SD Card/USB, iOS Photo Library, or Cloud, Kufee provides a unified browsing experience.",
+                "sources.s1_desc": "Supports Full Filesystem Access, auto-scans hidden folders with lightning-fast background indexing.",
+                "sources.s2_desc": "Independently authorized SD Card/USB storage via SAF. Hot-pluggable & safe from reference loss.",
+                "sources.s3_desc": "Custom in-app iOS browser integrating Photo Library, Recents, and iOS Files Document Picker.",
+                "sources.s4_desc": "Supports multi-account Dropbox and Google Drive integrations under unified Virtual Collections.",
+                "cta.title": "Ready to Transform How You Organize Photos?",
+                "cta.desc": "Download Kufee Gallery for free and enjoy a lightweight, cross-platform memory organization experience.",
+                "cta.footer_note": "Supports Android 8.0+ & iOS 14.0+ Devices | Material 3 Design",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.help": "Help Center"
             }
+        };
 
-            document.getElementById('selected-count').innerText = selectedCount;
+        let currentLang = localStorage.getItem('kufee_lang') || 'zh';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('kufee_lang', lang);
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Toggle Button Label
+            const langLabel = document.getElementById('lang-label');
+            if (langLabel) {
+                langLabel.innerText = lang === 'zh' ? 'English' : '繁體中文';
+            }
+            
+            // Set html lang attribute
+            document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
         }
 
-        // Intersection Observer for Scroll Animations
+        function toggleLanguage() {
+            const nextLang = currentLang === 'zh' ? 'en' : 'zh';
+            setLanguage(nextLang);
+        }
+
+        // Initialize i18n on load
         document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+
+            // Intersection Observer for Scroll Animations
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
