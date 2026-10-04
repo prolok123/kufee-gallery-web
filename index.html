@@ -191,6 +191,7 @@
                 <a href="#features" data-i18n="nav.features" class="hover:text-brand-primary transition-colors">核心特色</a>
                 <a href="#virtual-collection" data-i18n="nav.virtual" class="hover:text-brand-primary transition-colors">虛擬相簿概念</a>
                 <a href="#sources" data-i18n="nav.sources" class="hover:text-brand-primary transition-colors">跨平台來源</a>
+                <a href="#pricing" data-i18n="nav.pricing" class="hover:text-brand-primary transition-colors">方案與定價</a>
                 <a href="#demo" data-i18n="nav.demo" class="hover:text-brand-primary transition-colors">互動體驗</a>
             </nav>
 
@@ -342,17 +343,6 @@
                         <div>
                             <div class="text-xs font-bold text-brand-text" data-i18n="hero.badge_safe_title">原檔零動搖</div>
                             <div class="text-[11px] text-brand-muted" data-i18n="hero.badge_safe_sub">不會修改或刪除原始檔</div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Badge Card 2 -->
-                    <div class="absolute -bottom-6 -right-4 sm:-right-8 bg-white border border-brand-border p-3 rounded-2xl shadow-xl animate-float flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-brand-green text-lg">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold text-brand-text">原檔零動搖</div>
-                            <div class="text-[11px] text-brand-muted">不會修改或刪除原始檔</div>
                         </div>
                     </div>
 
@@ -527,6 +517,162 @@
         </div>
     </section>
 
+    <!-- Wave Divider before Pricing Section -->
+    <div class="relative w-full overflow-hidden leading-none z-10 -mt-1 -mb-1">
+        <svg class="relative block w-full h-12 sm:h-20 text-brand-subtle/60" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C300,90 600,10 1200,60 L1200,120 L0,120 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-brand-subtle/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 fade-in-up">
+                <span class="text-xs font-bold text-brand-primary uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-brand-border" data-i18n="pricing.badge">
+                    透明合理的定價
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text" data-i18n="pricing.title">
+                    選擇最適合你的方案
+                </h2>
+                <p class="text-brand-muted text-base" data-i18n="pricing.desc">
+                    核心瀏覽功能完全免費！你可以隨時在 App 內升級，享受無廣告體驗與高級虛擬相簿管理工具。
+                </p>
+                <div class="pt-1 inline-flex items-center gap-2 text-xs font-medium text-brand-muted bg-white/80 px-3.5 py-1.5 rounded-full border border-brand-border shadow-2xs">
+                    <i class="fa-solid fa-shield-halved text-brand-green"></i>
+                    <span data-i18n="pricing.iap_note">所有方案均透過 App Store / Google Play 官方 In-App Purchase (IAP) 安全開通</span>
+                </div>
+            </div>
+
+            <!-- Pricing Grid (4 Options) -->
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                
+                <!-- Option 1: Remove Ads -->
+                <div class="polaroid-card p-6 rounded-3xl flex flex-col justify-between fade-in-up">
+                    <div>
+                        <div class="text-xs font-bold text-brand-muted uppercase tracking-wider mb-2" data-i18n="pricing.p1_tag">基本升級</div>
+                        <h3 class="font-heading font-bold text-xl text-brand-text mb-2" data-i18n="pricing.p1_title">Remove Ads 移除廣告</h3>
+                        <p class="text-xs text-brand-muted mb-4 min-h-[36px]" data-i18n="pricing.p1_desc">一次性購買，永久清爽無干擾瀏覽。</p>
+                        <div class="my-4">
+                            <span class="text-3xl font-heading font-extrabold text-brand-text">$1.99</span>
+                            <span class="text-xs text-brand-muted" data-i18n="pricing.p1_period"> / 一次性買斷</span>
+                        </div>
+                        <ul class="space-y-2 text-xs text-brand-text border-t border-brand-border/60 pt-4 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p1_f1">徹底移除所有介面廣告</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p1_f2">保留所有免費功能與目錄瀏覽</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p1_f3">單一 Google / Apple 帳號通用</span></li>
+                        </ul>
+                    </div>
+                    <a href="#download" class="w-full py-2.5 rounded-xl border border-brand-primary text-brand-primary font-semibold text-xs text-center hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-1.5" data-i18n="pricing.btn_iap">
+                        <i class="fa-solid fa-mobile-screen-button text-xs"></i>
+                        <span>於 App 內購買 (IAP)</span>
+                    </a>
+                </div>
+
+                <!-- Option 2: Monthly -->
+                <div class="polaroid-card p-6 rounded-3xl flex flex-col justify-between fade-in-up">
+                    <div>
+                        <div class="text-xs font-bold text-brand-muted uppercase tracking-wider mb-2" data-i18n="pricing.p2_tag">彈性體驗</div>
+                        <h3 class="font-heading font-bold text-xl text-brand-text mb-2" data-i18n="pricing.p2_title">Monthly 月費訂閱</h3>
+                        <p class="text-xs text-brand-muted mb-4 min-h-[36px]" data-i18n="pricing.p2_desc">按月訂閱，隨時取消，解鎖所有 Pro 級高級功能。</p>
+                        <div class="my-4">
+                            <span class="text-3xl font-heading font-extrabold text-brand-text">$3.99</span>
+                            <span class="text-xs text-brand-muted" data-i18n="pricing.p2_period"> / 每月</span>
+                        </div>
+                        <ul class="space-y-2 text-xs text-brand-text border-t border-brand-border/60 pt-4 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f1">包含移除廣告</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f2">無限量建立雲端/本地虛擬相簿</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f3">跨平台裝置配置同步</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f4">隨時自由取消訂閱</span></li>
+                        </ul>
+                    </div>
+                    <a href="#download" class="w-full py-2.5 rounded-xl border border-brand-primary text-brand-primary font-semibold text-xs text-center hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-1.5" data-i18n="pricing.btn_iap">
+                        <i class="fa-solid fa-mobile-screen-button text-xs"></i>
+                        <span>於 App 內購買 (IAP)</span>
+                    </a>
+                </div>
+
+                <!-- Option 3: Annual (Popular) -->
+                <div class="polaroid-card p-6 rounded-3xl border-2 !border-brand-secondary relative flex flex-col justify-between fade-in-up shadow-md">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider" data-i18n="pricing.p3_badge">
+                        最划算超值首選
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-brand-secondary uppercase tracking-wider mb-2 mt-1" data-i18n="pricing.p3_tag">年費特惠</div>
+                        <h3 class="font-heading font-bold text-xl text-brand-primary mb-2" data-i18n="pricing.p3_title">Annual 年費訂閱</h3>
+                        <p class="text-xs text-brand-muted mb-4 min-h-[36px]" data-i18n="pricing.p3_desc">平均只需 $2.5/月，省下高達 37% 訂閱費用。</p>
+                        <div class="my-4">
+                            <span class="text-3xl font-heading font-extrabold text-brand-primary">$29.99</span>
+                            <span class="text-xs text-brand-muted" data-i18n="pricing.p3_period"> / 每年</span>
+                        </div>
+                        <ul class="space-y-2 text-xs text-brand-text border-t border-brand-border/60 pt-4 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f1">包含移除廣告</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f2">無限量建立雲端/本地虛擬相簿</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f3">跨平台裝置配置同步</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.pro_f5">優先客服與新功能試用</span></li>
+                        </ul>
+                    </div>
+                    <a href="#download" class="w-full py-2.5 rounded-xl bg-brand-secondary text-white font-bold text-xs text-center hover:bg-brand-primary transition-all shadow-sm flex items-center justify-center gap-1.5" data-i18n="pricing.btn_annual">
+                        <i class="fa-solid fa-mobile-screen-button text-xs"></i>
+                        <span>於 App 內訂閱 (IAP)</span>
+                    </a>
+                </div>
+
+                <!-- Option 4: Lifetime -->
+                <div class="polaroid-card p-6 rounded-3xl border-2 !border-brand-primary relative flex flex-col justify-between fade-in-up bg-white">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider" data-i18n="pricing.p4_badge">
+                        終身安心買斷
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-2 mt-1" data-i18n="pricing.p4_tag">一次過付清</div>
+                        <h3 class="font-heading font-bold text-xl text-brand-text mb-2" data-i18n="pricing.p4_title">Lifetime 終身授權</h3>
+                        <p class="text-xs text-brand-muted mb-4 min-h-[36px]" data-i18n="pricing.p4_desc">拒絕訂閱焦慮！一次付款，永久享用未來所有 Pro 更新。</p>
+                        <div class="my-4">
+                            <span class="text-3xl font-heading font-extrabold text-brand-text">$44.99</span>
+                            <span class="text-xs text-brand-muted" data-i18n="pricing.p4_period"> / 終身一次性</span>
+                        </div>
+                        <ul class="space-y-2 text-xs text-brand-text border-t border-brand-border/60 pt-4 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p4_f1">一次性付清，終身無需再付費</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p4_f2">永久解鎖所有 Pro 旗艦功能</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p4_f3">包含未來所有重大版本升級</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> <span data-i18n="pricing.p4_f4">支持獨立開發者的永續營運</span></li>
+                        </ul>
+                    </div>
+                    <a href="#download" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-xs text-center hover:bg-brand-hover transition-all shadow-sm flex items-center justify-center gap-1.5" data-i18n="pricing.btn_lifetime">
+                        <i class="fa-solid fa-mobile-screen-button text-xs"></i>
+                        <span>於 App 內買斷 (IAP)</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- "Why Pricing Works This Way" Letter / Heartfelt Note Section -->
+            <div class="mt-16 bg-white border border-brand-border p-8 rounded-3xl shadow-sm fade-in-up max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-100 text-brand-primary flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-brand-text" data-i18n="pricing.letter_title">
+                        為什麼我們這樣定價？— 來自獨立開發者的真心話
+                    </h3>
+                </div>
+
+                <div class="text-sm text-brand-muted leading-relaxed space-y-4 pt-2 border-t border-brand-border/60">
+                    <p data-i18n="pricing.letter_p1">
+                        「我們深知大家都厭倦了市面上所有 App 都變成『無底洞訂閱制』。然而，維持一個跨越 iOS & Android 雙平台、適應不同系統更新、維護雲端串接 API 的 App，需要持續的努力與開發成本。」
+                    </p>
+                    <p data-i18n="pricing.letter_p2">
+                        「因此，我們希望提供<b>最尊重選擇</b>的定價架構：如果你只想乾淨看照片，<b>$1.99 移除廣告</b>即可；如果你習慣按月或按年靈活訂閱，我們有優惠的 <b>$3.99/月 與 $29.99/年</b>；而如果你跟我們一樣，希望能『一次購買、終身安心』，<b>$44.99 買斷</b>能讓你永久擁有 Kufee Gallery 的完整靈魂。」
+                    </p>
+                    <p data-i18n="pricing.letter_p3">
+                        「感謝每一個選擇支持我們的你，讓獨立開發的優質工具能夠長遠、健康地營運下去！」
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Wave Divider before Download CTA -->
     <div class="relative w-full overflow-hidden leading-none z-10 -mb-1">
         <svg class="relative block w-full h-14 sm:h-24 text-brand-primary" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -596,6 +742,7 @@
                 "nav.features": "核心特色",
                 "nav.virtual": "虛擬相簿概念",
                 "nav.sources": "跨平台來源",
+                "nav.pricing": "方案與定價",
                 "nav.demo": "互動體驗",
                 "nav.download": "免費下載",
                 "hero.badge": "iOS & Android 雙平台跨來源媒體瀏覽 App",
@@ -634,6 +781,47 @@
                 "sources.s2_desc": "獨立授權的 SD 卡、USB OTG 或外接硬碟目錄。隨插即用，拔出時自動保護相簿索引不丟失。",
                 "sources.s3_desc": "內建自訂相簿瀏覽器，無縫整合系統相簿、Recents、iOS Files Document Picker 與外接裝置。",
                 "sources.s4_desc": "支援 Dropbox、Google Drive 多帳號安全連接。將雲端照片與本地照片同存於同一個虛擬相簿中。",
+                "pricing.badge": "透明合理的定價",
+                "pricing.title": "選擇最適合你的方案",
+                "pricing.desc": "核心瀏覽功能完全免費！你可以隨時在 App 內升級，享受無廣告體驗與高級虛擬相簿管理工具。",
+                "pricing.iap_note": "所有方案均透過 App Store / Google Play 官方 In-App Purchase (IAP) 安全開通",
+                "pricing.p1_tag": "基本升級",
+                "pricing.p1_title": "Remove Ads 移除廣告",
+                "pricing.p1_desc": "一次性購買，永久清爽無干擾瀏覽。",
+                "pricing.p1_period": " / 一次性買斷",
+                "pricing.p1_f1": "徹底移除所有介面廣告",
+                "pricing.p1_f2": "保留所有免費功能與目錄瀏覽",
+                "pricing.p1_f3": "單一 Google / Apple 帳號通用",
+                "pricing.p2_tag": "彈性體驗",
+                "pricing.p2_title": "Monthly 月費訂閱",
+                "pricing.p2_desc": "按月訂閱，隨時取消，解鎖所有 Pro 級高級功能。",
+                "pricing.p2_period": " / 每月",
+                "pricing.pro_f1": "包含移除廣告",
+                "pricing.pro_f2": "無限量建立雲端/本地虛擬相簿",
+                "pricing.pro_f3": "跨平台裝置配置同步",
+                "pricing.pro_f4": "隨時自由取消訂閱",
+                "pricing.pro_f5": "優先客服與新功能試用",
+                "pricing.p3_badge": "最划算超值首選",
+                "pricing.p3_tag": "年費特惠",
+                "pricing.p3_title": "Annual 年費訂閱",
+                "pricing.p3_desc": "平均只需 $2.5/月，省下高達 37% 訂閱費用。",
+                "pricing.p3_period": " / 每年",
+                "pricing.p4_badge": "終身安心買斷",
+                "pricing.p4_tag": "一次過付清",
+                "pricing.p4_title": "Lifetime 終身授權",
+                "pricing.p4_desc": "拒絕訂閱焦慮！一次付款，永久享用未來所有 Pro 更新。",
+                "pricing.p4_period": " / 終身一次性",
+                "pricing.p4_f1": "一次性付清，終身無需再付費",
+                "pricing.p4_f2": "永久解鎖所有 Pro 旗艦功能",
+                "pricing.p4_f3": "包含未來所有重大版本升級",
+                "pricing.p4_f4": "支持獨立開發者的永續營運",
+                "pricing.btn_iap": "於 App 內購買 (IAP)",
+                "pricing.btn_annual": "於 App 內訂閱 (IAP)",
+                "pricing.btn_lifetime": "於 App 內買斷 (IAP)",
+                "pricing.letter_title": "為什麼我們這樣定價？— 來自獨立開發者的真心話",
+                "pricing.letter_p1": "「我們深知大家都厭倦了市面上所有 App 都變成『無底洞訂閱制』。然而，維持一個跨越 iOS & Android 雙平台、適應不同系統更新、維護雲端串接 API 的 App，需要持續的努力與開發成本。」",
+                "pricing.letter_p2": "「因此，我們希望提供<b>最尊重選擇</b>的定價架構：如果你只想乾淨看照片，<b>$1.99 移除廣告</b>即可；如果你習慣按月或按年靈活訂閱，我們有優惠的 <b>$3.99/月 與 $29.99/年</b>；而如果你跟我們一樣，希望能『一次購買、終身安心』，<b>$44.99 買斷</b>能讓你永久擁有 Kufee Gallery 的完整靈魂。」",
+                "pricing.letter_p3": "「感謝每一個選擇支持我們的你，讓獨立開發的優質工具能夠長遠、健康地營運下去！」",
                 "cta.title": "準備好用全新方式整理你的相片庫了嗎？",
                 "cta.desc": "免費下載 Kufee Gallery，享受跨平台、零負擔、充滿質感的回憶整理之旅。",
                 "cta.footer_note": "支援 Android 8.0+ 及 iOS 14.0+ 裝置 | Material 3 美學設計",
@@ -645,6 +833,7 @@
                 "nav.features": "Features",
                 "nav.virtual": "Virtual Collections",
                 "nav.sources": "Media Sources",
+                "nav.pricing": "Pricing",
                 "nav.demo": "Interactive Demo",
                 "nav.download": "Free Download",
                 "hero.badge": "Cross-Platform Media Gallery App for iOS & Android",
@@ -683,6 +872,47 @@
                 "sources.s2_desc": "Independently authorized SD Card/USB storage via SAF. Hot-pluggable & safe from reference loss.",
                 "sources.s3_desc": "Custom in-app iOS browser integrating Photo Library, Recents, and iOS Files Document Picker.",
                 "sources.s4_desc": "Supports multi-account Dropbox and Google Drive integrations under unified Virtual Collections.",
+                "pricing.badge": "Transparent & Fair Pricing",
+                "pricing.title": "Choose the Plan That Fits You",
+                "pricing.desc": "Core browsing features are 100% free! Upgrade anytime inside the app for an ad-free experience and advanced tools.",
+                "pricing.iap_note": "All plans are processed via official App Store / Google Play In-App Purchase (IAP)",
+                "pricing.p1_tag": "Basic Upgrade",
+                "pricing.p1_title": "Remove Ads",
+                "pricing.p1_desc": "One-time purchase for a clean, ad-free photo browsing experience.",
+                "pricing.p1_period": " / One-time",
+                "pricing.p1_f1": "Completely remove all in-app ads",
+                "pricing.p1_f2": "Retain all free features & directory access",
+                "pricing.p1_f3": "Synced across your Apple / Google account",
+                "pricing.p2_tag": "Flexible Option",
+                "pricing.p2_title": "Monthly Subscription",
+                "pricing.p2_desc": "Subscribe monthly, cancel anytime. Unlock all Pro features.",
+                "pricing.p2_period": " / Month",
+                "pricing.pro_f1": "Includes Ad Removal",
+                "pricing.pro_f2": "Unlimited Virtual Collections (Local & Cloud)",
+                "pricing.pro_f3": "Cross-device configuration sync",
+                "pricing.pro_f4": "Cancel subscription anytime",
+                "pricing.pro_f5": "Priority support & early feature access",
+                "pricing.p3_badge": "Best Value Choice",
+                "pricing.p3_tag": "Annual Discount",
+                "pricing.p3_title": "Annual Subscription",
+                "pricing.p3_desc": "Just ~$2.50/month — save up to 37% compared to monthly.",
+                "pricing.p3_period": " / Year",
+                "pricing.p4_badge": "Lifetime Purchase",
+                "pricing.p4_tag": "Pay Once, Own Forever",
+                "pricing.p4_title": "Lifetime Access",
+                "pricing.p4_desc": "Say goodbye to subscription fatigue! Pay once and get lifetime access to all Pro features.",
+                "pricing.p4_period": " / One-time Lifetime",
+                "pricing.p4_f1": "Pay once with zero recurring charges",
+                "pricing.p4_f2": "Permanently unlock all Pro flagship features",
+                "pricing.p4_f3": "Includes all future major updates",
+                "pricing.p4_f4": "Support sustainable indie app development",
+                "pricing.btn_iap": "In-App Purchase",
+                "pricing.btn_annual": "Subscribe In-App",
+                "pricing.btn_lifetime": "Buy Lifetime In-App",
+                "pricing.letter_title": "Why We Price This Way — A Note From the Indie Developer",
+                "pricing.letter_p1": "\"We know how tiring subscription fatigue can be when every app demands endless monthly fees. However, maintaining a smooth app across iOS & Android, adapting to OS updates, and maintaining cloud APIs requires ongoing effort and development costs.\"",
+                "pricing.letter_p2": "\"That's why we created a pricing model that <b>respects your choices</b>: If you just want an ad-free experience, <b>$1.99 Remove Ads</b> is all you need. If you prefer monthly/annual flexibility, we offer <b>$3.99/mo & $29.99/yr</b>. And if you prefer peace of mind, <b>$44.99 Lifetime</b> gives you permanent ownership of Kufee Gallery.\"",
+                "pricing.letter_p3": "\"Thank you for supporting independent software development and helping us build a sustainable future!\"",
                 "cta.title": "Ready to Transform How You Organize Photos?",
                 "cta.desc": "Download Kufee Gallery for free and enjoy a lightweight, cross-platform memory organization experience.",
                 "cta.footer_note": "Supports Android 8.0+ & iOS 14.0+ Devices | Material 3 Design",
@@ -705,6 +935,11 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
+
+            // Update Document Title
+            document.title = lang === 'zh' 
+                ? 'Kufee Gallery — 無需複製相片，打造你嘅專屬靈魂相簿' 
+                : 'Kufee Gallery — Organize Your Photos Without Duplication';
 
             // Update Toggle Button Label
             const langLabel = document.getElementById('lang-label');
